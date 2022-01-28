@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { useState } from "react";
+import LinksList from "./components/Link/LinksList";
+import { seedLinks } from "./utils/seed";
+
+const Container = styled.div`
+  margin: 5%;
+`;
 
 function App() {
+  const links = seedLinks();
+  const [storedLinks, setStoredLinks] = useState(links);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <LinksList storedLinks={storedLinks} setStoredLinks={setStoredLinks}/>
+    </Container>
   );
 }
 
