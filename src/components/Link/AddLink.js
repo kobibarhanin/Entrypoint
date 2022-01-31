@@ -5,11 +5,13 @@ import Button from "../UI/Button";
 import classes from "./AddLink.module.css";
 
 const AddLink = (props) => {
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredUrl, setEnteredUrl] = useState("");
-  const [enteredIconUrl, setEnteredIconUrl] = useState();
+  const [enteredTitle, setEnteredTitle] = useState("Youtube");
+  const [enteredUrl, setEnteredUrl] = useState("https://www.youtube.com/");
+  const [enteredIconUrl, setEnteredIconUrl] = useState(
+    "https://cdn.pixabay.com/photo/2016/11/19/03/08/youtube-1837872__480.png"
+  );
 
-  const links = props.storedLinks
+  const links = props.storedLinks;
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
